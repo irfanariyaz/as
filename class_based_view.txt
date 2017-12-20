@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+import random
+
+IN VIEWS.PY
+
+from django.shortcuts import render
+
+from django.http import HttpResponse
+from django.views import View
+
+# Create your views here.
+def home(request):
+    num=random.randint(0,1000)
+    return render(request,"home.html",{})
+def about(request):
+	num=random.randint(0,1000)
+	return render(request,"about.html",{})
+def contact(request):
+    num=random.randint(0,1000)
+    return render(request,"contact.html",{})
+class ContactView(View):
+	def get(self,request,*args,**kwargs):
+	return render(request,"contact.html",{})
+
+-------------------
+URLS
+from django.conf.urls import url
+from django.contrib import admin
+from restaurant.views import home,about,contact,ContactView
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', home),
+    url(r'^about/', about),
+    url(r'^contact/', ContactView.as_view()),
+]
+
+		return render(request,"contact.html",{})
+	"""docstring for ContactView"""

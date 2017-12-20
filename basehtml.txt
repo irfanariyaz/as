@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<title>{% block head_title %}Routine.com{% endblock head_title %}</title>
+	THIS IS HOME PAGE
+</head>
+<body>
+<p>
+<a href="/">HOME</a>
+<a href="/zoha">ZOHA</a>
+<a href="/zaid">ZAID</a>
+<div class="container">
+{% block content %}
+{% endblock content %}
+</div>
+</p>
+	this is the body
+</body> page
+
+{% extends "base.html" %}
+{% block head_title %}Welcome zoha||{{block.super}}{% endblock head_title %}
+{% block content %}
+<h1>
+	this is zohas page
+</h1>
+{% endblock content %}
+-----------------------------------
+<!doctype html>
+<html lang="en">
+
+<head> 
+	{% include 'snippets/css.html' %}
+<title>{% block head_title %}Muy Picky{% endblock head_title %}</title>
+
+</head>
+
+<body>
+
+{% include 'snippets/nav.html' %}
+<div class='container'>
+{% block content %}
+{% endblock content %}
+</div>
+<p>
+	This is {{html_var}}
+</p>
+<p>
+	
+	Random number {{num}}
+</p>
+{% include 'snippets/js.html' %}
+</body>
+
+
+</html>
+
+--------------------------------
+ADDED NAV.HTML,CSS.HTML,JS.HTML,SIDEBAR.HTML IN SNIPPETS FOLDER
+IN TEMPLATES.

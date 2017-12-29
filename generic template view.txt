@@ -1,0 +1,2 @@
+added slug to url
+no need of template_name in the ListView in line 18 of views.py as  changed the restaurant_list.html file to restaurantlocation_list.html
